@@ -10,15 +10,17 @@ export default function Projects() {
       status: 'Em Desenvolvimento',
       featured: true,
       color: 'from-blue-500 to-cyan-500',
+      live: 'https://github.com/Kelwin-promax/Ecommerce_Alta_Performance.git',
       github: 'https://github.com/Kelwin-promax/Ecommerce_Alta_Performance.git'
     },
     {
-      title: 'UI Component Library',
-      description: 'Biblioteca de componentes reutilizáveis com design system completo e documentação interativa.',
-      tech: ['React', 'Tailwind', 'Storybook'],
-      status: 'Completo',
+      title: 'Immersive Portfolio',
+      description: 'Portfólio interativo em formato de galeria 3D, com projetos exibidos como exposições em um ambiente virtual navegável, HUD sobreposto, interação por mouse/teclado e modal de detalhes.',
+      tech: ['React', 'Vite', 'TypeScript', 'Three.js', 'Tailwind'],
+      status: 'Em Desenvolvimento',
       featured: true,
       color: 'from-purple-500 to-pink-500',
+      live: 'https://interactive-portfolio-chi-rouge.vercel.app/',
       github: 'https://github.com/Kelwin-promax'
     },
     {
@@ -28,16 +30,18 @@ export default function Projects() {
       status: 'Completo',
       featured: false,
       color: 'from-green-500 to-emerald-500',
+      live: 'https://github.com/Kelwin-promax/Dashboard_Log-stico.git',
       github: 'https://github.com/Kelwin-promax/Dashboard_Log-stico.git'
     },
     {
-      title: 'Social Media App',
-      description: 'Aplicação social com feed dinâmico, sistema de notificações e chat em tempo real.',
-      tech: ['React', 'Firebase', 'Node.js'],
+      title: 'Escort in Road',
+      description: 'Plataforma de otimização logística com backhaul matching, conectando caminhões vazios a cargas disponíveis para reduzir custos, aumentar o lucro do motorista e diminuir a emissão de CO2.',
+      tech: ['React', 'Vite', 'TypeScript', 'Tailwind'],
       status: 'Completo',
       featured: false,
       color: 'from-orange-500 to-red-500',
-      github: 'https://github.com/Kelwin-promax'
+      live: 'https://in-road.vercel.app',
+      github: 'https://github.com/Kelwin-promax/InRoad.git'
     }
   ];
 
@@ -131,7 +135,7 @@ export default function Projects() {
             </h3>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-12">
+          <div className="grid md:grid-cols-2 gap-8 lg:gap-10">
             {projects.filter(p => p.featured).map((project, index) => (
               <motion.div
                 key={index}
@@ -139,7 +143,7 @@ export default function Projects() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ delay: index * 0.2, type: "spring" }}
                 viewport={{ once: true }}
-                whileHover={{ scale: 1.05, rotate: index % 2 === 0 ? 2 : -2 }}
+                whileHover={{ scale: 1.03, rotate: index % 2 === 0 ? 1 : -1 }}
                 className="relative group cursor-pointer"
               >
                 {/* Outer glow */}
@@ -149,28 +153,28 @@ export default function Projects() {
                     opacity: [0.3, 0.6, 0.3],
                   }}
                   transition={{ duration: 3, repeat: Infinity }}
-                  className={`absolute -inset-4 bg-gradient-to-br ${project.color} rounded-full blur-2xl`}
+                  className={`pointer-events-none absolute -inset-4 bg-gradient-to-br ${project.color} rounded-full blur-2xl`}
                 />
 
-                {/* Main container - organic blob */}
+                {/* Main container */}
                 <div
-                  className={`relative overflow-hidden bg-gradient-to-br ${project.color} p-10`}
+                  className={`relative h-full overflow-hidden bg-gradient-to-br ${project.color} p-6 sm:p-8 lg:p-10 shadow-2xl`}
                   style={{
                     borderRadius: index % 2 === 0
-                      ? '30% 70% 70% 30% / 30% 30% 70% 70%'
-                      : '70% 30% 30% 70% / 70% 70% 30% 30%',
-                    minHeight: '400px',
+                      ? '32px 72px 40px 56px'
+                      : '72px 32px 56px 40px',
+                    minHeight: '430px',
                   }}
                 >
                   {/* Morphing background */}
                   <motion.div
                     animate={{
                       borderRadius: index % 2 === 0
-                        ? ['30% 70% 70% 30% / 30% 30% 70% 70%', '70% 30% 30% 70% / 70% 70% 30% 30%', '30% 70% 70% 30% / 30% 30% 70% 70%']
-                        : ['70% 30% 30% 70% / 70% 70% 30% 30%', '30% 70% 70% 30% / 30% 30% 70% 70%', '70% 30% 30% 70% / 70% 70% 30% 30%']
+                        ? ['32px 72px 40px 56px', '72px 32px 56px 40px', '32px 72px 40px 56px']
+                        : ['72px 32px 56px 40px', '32px 72px 40px 56px', '72px 32px 56px 40px']
                     }}
                     transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-                    className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity"
+                    className="pointer-events-none absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity"
                   />
 
                   {/* Pattern overlay */}
@@ -179,18 +183,18 @@ export default function Projects() {
                       backgroundPosition: ['0% 0%', '100% 100%'],
                     }}
                     transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                    className="absolute inset-0 opacity-10"
+                    className="pointer-events-none absolute inset-0 opacity-10"
                     style={{
                       backgroundImage: 'repeating-radial-gradient(circle at 0 0, transparent 0, white 10px, transparent 20px)',
                     }}
                   />
 
-                  <div className="relative z-10">
+                  <div className="relative z-10 flex min-h-[360px] flex-col">
                     {/* Status Badge */}
-                    <div className="flex items-center justify-between mb-6">
+                    <div className="mb-6 flex items-start justify-between gap-4">
                       <motion.div
                         whileHover={{ scale: 1.1, rotate: 5 }}
-                        className={`px-6 py-2 font-bold rounded-full ${
+                        className={`max-w-[75%] px-4 py-2 text-sm font-bold leading-tight sm:max-w-none sm:px-6 sm:text-base ${
                           project.status === 'Em Desenvolvimento'
                             ? 'bg-yellow-400/30 border-2 border-yellow-300'
                             : 'bg-green-400/30 border-2 border-green-300'
@@ -213,22 +217,22 @@ export default function Projects() {
                     </div>
 
                     {/* Title */}
-                    <h4 className="text-3xl font-black mb-4 text-white">
+                    <h4 className="mb-4 max-w-full break-words text-2xl font-black leading-tight text-white sm:text-3xl">
                       {project.title}
                     </h4>
 
                     {/* Description */}
-                    <p className="text-white/90 mb-6 text-lg">
+                    <p className="mb-6 text-base leading-relaxed text-white/90 sm:text-lg">
                       {project.description}
                     </p>
 
                     {/* Tech Stack - Pill shapes */}
-                    <div className="flex flex-wrap gap-3 mb-8">
+                    <div className="mb-8 flex flex-wrap gap-3">
                       {project.tech.map((tech, techIndex) => (
                         <motion.div
                           key={techIndex}
                           whileHover={{ scale: 1.1, y: -5 }}
-                          className="bg-white/20 backdrop-blur-sm px-4 py-2 border-2 border-white/40 font-bold"
+                          className="bg-white/20 backdrop-blur-sm px-3 py-2 text-sm font-bold leading-none border-2 border-white/40 sm:px-4 sm:text-base"
                           style={{
                             borderRadius: '50% 50% 50% 50% / 70% 70% 30% 30%'
                           }}
@@ -239,21 +243,23 @@ export default function Projects() {
                     </div>
 
                     {/* Links */}
-                    <div className="flex gap-6">
-                      <motion.button
-                        whileHover={{ scale: 1.1, x: 5 }}
-                        className="flex items-center gap-2 bg-white/20 backdrop-blur-sm px-6 py-3 rounded-full font-bold border-2 border-white/40"
+                    <div className="mt-auto flex flex-wrap gap-3 sm:gap-4">
+                      <a
+                        href={project.live}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="relative z-20 flex items-center gap-2 rounded-full bg-white/20 px-4 py-3 font-bold leading-none backdrop-blur-sm border-2 border-white/40 transition-transform hover:translate-x-1 hover:scale-105 sm:px-6"
                       >
                         <ExternalLink size={20} />
                         Ver Projeto
-                      </motion.button>
+                      </a>
 
                       <motion.a
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
                         whileHover={{ scale: 1.1, x: 5 }}
-                        className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full font-bold border-2 border-white/30"
+                        className="relative z-20 flex items-center gap-2 rounded-full bg-white/10 px-4 py-3 font-bold leading-none backdrop-blur-sm border-2 border-white/30 sm:px-6"
                       >
                         <Github size={20} />
                         Código
@@ -275,7 +281,7 @@ export default function Projects() {
                         repeat: Infinity,
                         delay: i * 0.7,
                       }}
-                      className="absolute w-2 h-2 bg-white rounded-full"
+                      className="pointer-events-none absolute w-2 h-2 bg-white rounded-full"
                       style={{
                         left: `${15 + i * 15}%`,
                         top: `${20 + i * 10}%`,
@@ -296,24 +302,23 @@ export default function Projects() {
 
           <div className="grid md:grid-cols-2 gap-8">
             {projects.filter(p => !p.featured).map((project, index) => (
-              <motion.a
+              <motion.div
                 key={index}
-                href={project.github}
-                target="_blank"
-                rel="noopener noreferrer"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
                 viewport={{ once: true }}
                 whileHover={{ scale: 1.05, rotate: index % 2 === 0 ? -3 : 3 }}
-                className="relative group cursor-pointer"
+                className="relative group"
               >
-                {/* Circular container */}
+                {/* Project card */}
                 <div
-                  className={`relative overflow-hidden bg-gradient-to-br ${project.color} p-8`}
+                  className={`relative h-full overflow-hidden bg-gradient-to-br ${project.color} p-6 shadow-xl sm:p-8`}
                   style={{
-                    borderRadius: '40% 60% 60% 40% / 60% 40% 60% 40%',
-                    minHeight: '280px',
+                    borderRadius: index % 2 === 0
+                      ? '28px 56px 32px 48px'
+                      : '56px 28px 48px 32px',
+                    minHeight: '300px',
                   }}
                 >
                   <motion.div
@@ -321,24 +326,24 @@ export default function Projects() {
                       backgroundPosition: ['0% 0%', '100% 100%'],
                     }}
                     transition={{ duration: 15, repeat: Infinity }}
-                    className="absolute inset-0 opacity-20"
+                    className="pointer-events-none absolute inset-0 opacity-20"
                     style={{
                       backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)',
                       backgroundSize: '30px 30px',
                     }}
                   />
 
-                  <div className="relative z-10">
-                    <div className="flex items-start justify-between mb-4">
-                      <h4 className="text-2xl font-black text-white pr-4">{project.title}</h4>
+                  <div className="relative z-10 flex min-h-[240px] flex-col">
+                    <div className="mb-4 flex items-start justify-between gap-4">
+                      <h4 className="min-w-0 flex-1 break-words text-2xl font-black leading-tight text-white">{project.title}</h4>
                       <Code2 className="flex-shrink-0 text-white/60" size={28} />
                     </div>
 
-                    <p className="text-white/80 mb-6">
+                    <p className="mb-6 leading-relaxed text-white/80">
                       {project.description}
                     </p>
 
-                    <div className="flex flex-wrap gap-2">
+                    <div className="mb-6 flex flex-wrap gap-2">
                       {project.tech.map((tech, techIndex) => (
                         <span
                           key={techIndex}
@@ -348,9 +353,32 @@ export default function Projects() {
                         </span>
                       ))}
                     </div>
+
+                    <div className="mt-auto flex flex-wrap gap-3 sm:gap-4">
+                      <a
+                        href={project.live}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="relative z-20 flex items-center gap-2 rounded-full bg-white/20 px-4 py-3 font-bold leading-none backdrop-blur-sm border-2 border-white/40 transition-transform hover:translate-x-1 hover:scale-105 sm:px-6"
+                      >
+                        <ExternalLink size={20} />
+                        Ver Projeto
+                      </a>
+
+                      <motion.a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        whileHover={{ scale: 1.1, x: 5 }}
+                        className="relative z-20 flex items-center gap-2 rounded-full bg-white/10 px-4 py-3 font-bold leading-none backdrop-blur-sm border-2 border-white/30 sm:px-6"
+                      >
+                        <Github size={20} />
+                        Código
+                      </motion.a>
+                    </div>
                   </div>
                 </div>
-              </motion.a>
+              </motion.div>
             ))}
           </div>
         </div>
