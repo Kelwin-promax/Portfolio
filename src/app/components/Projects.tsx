@@ -4,44 +4,54 @@ import { ExternalLink, Github, Rocket, Zap, Star, Code2 } from 'lucide-react';
 export default function Projects() {
   const projects = [
     {
-      title: 'Ecommerce Alta Performance',
-      description: 'Plataforma de e-commerce com performance otimizada, carrinho inteligente e sistema de pagamento integrado.',
-      tech: ['React', 'Node.js', 'MongoDB', 'Stripe'],
+      title: 'Clean',
+      description: 'Plataforma mobile que conecta profissionais da limpeza (diaristas) a clientes que buscam serviços rápidos, confiáveis e seguros. Dois fluxos integrados: cliente e profissional, desde orçamento até pagamento.',
+      tech: ['React', 'React Native', 'Node.js', 'TypeScript', 'Tailwind'],
       status: 'Em Desenvolvimento',
       featured: true,
-      color: 'from-blue-500 to-cyan-500',
+      color: 'from-emerald-500 to-teal-500',
+      live: 'https://servi-o-diaristas.vercel.app/',
+      github: 'https://github.com/Kelwin-promax/Servi-oDiaristas.git'
+    },
+    {
+      title: 'Dashboard Logístico',
+      description: 'Torre de controle logístico de alta performance para monitoramento de frota, otimização de ocupação de carga e gestão de custos operacionais. Identidade visual inspirada na Scania com foco em clareza e eficiência de dados.',
+      tech: ['React', 'Vite', 'TypeScript', 'Chart.js', 'Tailwind'],
+      status: 'Completo',
+      featured: true,
+      color: 'from-blue-600 to-indigo-600',
+      live: 'https://dashboard-log-stico-seven.vercel.app/',
+      github: 'https://github.com/Kelwin-promax/Dashboard_Log-stico.git'
+    },
+    {
+      title: 'EscortInRoad',
+      description: 'Plataforma de otimização logística (Backhaul Matching) que conecta caminhões vazios a cargas disponíveis. Reduz custos, aumenta lucro do motorista e diminui emissão de CO2 nas rodovias brasileiras.',
+      tech: ['React', 'Vite', 'TypeScript', 'Node.js', 'Tailwind'],
+      status: 'Em Desenvolvimento',
+      featured: false,
+      color: 'from-orange-500 to-amber-500',
+      live: 'https://github.com/Kelwin-promax/EscortInRoad.git',
+      github: 'https://github.com/Kelwin-promax/EscortInRoad.git'
+    },
+    {
+      title: 'Ecommerce Alta Performance',
+      description: 'Plataforma e-commerce Headless desenvolvida do zero para máxima performance. Frontend em React, backend em Node.js e MySQL como banco de dados. Otimizado para velocidade e escalabilidade.',
+      tech: ['React', 'Node.js', 'MySQL', 'TypeScript', 'Tailwind'],
+      status: 'Em Desenvolvimento',
+      featured: false,
+      color: 'from-violet-500 to-purple-600',
       live: 'https://github.com/Kelwin-promax/Ecommerce_Alta_Performance.git',
       github: 'https://github.com/Kelwin-promax/Ecommerce_Alta_Performance.git'
     },
     {
-      title: 'Immersive Portfolio',
-      description: 'Portfólio interativo em formato de galeria 3D, com projetos exibidos como exposições em um ambiente virtual navegável, HUD sobreposto, interação por mouse/teclado e modal de detalhes.',
-      tech: ['React', 'Vite', 'TypeScript', 'Three.js', 'Tailwind'],
+      title: 'Site for Manual Workers',
+      description: 'Plataforma mobile que conecta profissionais da construção civil, marcenaria, elétrica e outros ofícios a clientes que buscam serviços rápidos, confiáveis e seguros.',
+      tech: ['React', 'React Native', 'Node.js', 'TypeScript', 'Tailwind'],
       status: 'Em Desenvolvimento',
-      featured: true,
-      color: 'from-purple-500 to-pink-500',
-      live: 'https://interactive-portfolio-chi-rouge.vercel.app/',
-      github: 'https://github.com/Kelwin-promax'
-    },
-    {
-      title: 'Dashboard Logístico',
-      description: 'Sistema de analytics logístico com rastreamento em tempo real e visualização de métricas operacionais.',
-      tech: ['React', 'WebSocket', 'Chart.js'],
-      status: 'Completo',
       featured: false,
-      color: 'from-green-500 to-emerald-500',
-      live: 'https://github.com/Kelwin-promax/Dashboard_Log-stico.git',
-      github: 'https://github.com/Kelwin-promax/Dashboard_Log-stico.git'
-    },
-    {
-      title: 'Escort in Road',
-      description: 'Plataforma de otimização logística com backhaul matching, conectando caminhões vazios a cargas disponíveis para reduzir custos, aumentar o lucro do motorista e diminuir a emissão de CO2.',
-      tech: ['React', 'Vite', 'TypeScript', 'Tailwind'],
-      status: 'Completo',
-      featured: false,
-      color: 'from-orange-500 to-red-500',
-      live: 'https://in-road.vercel.app',
-      github: 'https://github.com/Kelwin-promax/InRoad.git'
+      color: 'from-red-500 to-rose-600',
+      live: 'https://site-for-manual-workers.vercel.app/',
+      github: 'https://github.com/Kelwin-promax/Site-for-manual-workers.git'
     }
   ];
 

@@ -13,9 +13,9 @@ export default function Contact() {
     {
       name: 'LinkedIn',
       icon: <Linkedin size={32} />,
-      url: 'https://linkedin.com/in/kelwin-tecnico-desenvolvimento-de-sistemas/',
+      url: 'https://www.linkedin.com/in/kelwin-tecnico-desenvolvimento-de-sistemas/',
       color: 'from-blue-600 to-blue-800',
-      username: '@kelwin-promax'
+      username: '@Kelwin-promax'
     },
     {
       name: 'Email',
@@ -184,18 +184,112 @@ export default function Contact() {
                     </motion.div>
                     <div>
                       <div className="text-sm opacity-90 mb-1">Email Principal</div>
-                      <div className="text-xl font-black">seuemail@exemplo.com</div>
+                      <div className="text-xl font-black">kelwingilfernandes18@gmail.com</div>
                     </div>
                   </div>
 
-                  <motion.button
+                  <motion.a
+                    href="mailto:kelwingilfernandes18@gmail.com"
                     whileHover={{ scale: 1.05, x: 10 }}
                     whileTap={{ scale: 0.95 }}
                     className="flex items-center gap-3 bg-white/30 backdrop-blur-sm px-8 py-4 font-black border-2 border-white/50 rounded-full"
                   >
                     Enviar Email
                     <Send size={20} />
-                  </motion.button>
+                  </motion.a>
+                </div>
+
+                {/* Floating particles */}
+                {[...Array(5)].map((_, i) => (
+                  <motion.div
+                    key={i}
+                    animate={{
+                      y: [0, -30, 0],
+                      opacity: [0.3, 0.7, 0.3],
+                    }}
+                    transition={{
+                      duration: 4,
+                      repeat: Infinity,
+                      delay: i * 0.6,
+                    }}
+                    className="absolute w-2 h-2 bg-white rounded-full"
+                    style={{
+                      left: `${20 + i * 15}%`,
+                      top: `${30 + i * 10}%`,
+                    }}
+                  />
+                ))}
+              </motion.div>
+            </div>
+
+            {/* LinkedIn CTA - Curriculum */}
+            <div className="relative group">
+              <motion.div
+                animate={{
+                  scale: [1, 1.2, 1],
+                  opacity: [0.4, 0.7, 0.4],
+                }}
+                transition={{ duration: 3, repeat: Infinity }}
+                className="absolute -inset-8 bg-gradient-to-br from-blue-600 to-blue-400 rounded-full blur-3xl"
+              />
+
+              <motion.div
+                whileHover={{ scale: 1.05, rotate: 2 }}
+                className="relative overflow-hidden bg-gradient-to-br from-blue-600 to-blue-400 p-10 cursor-pointer"
+                style={{
+                  borderRadius: '40% 60% 55% 45% / 50% 55% 45% 50%',
+                }}
+              >
+                <motion.div
+                  animate={{
+                    borderRadius: [
+                      '40% 60% 55% 45% / 50% 55% 45% 50%',
+                      '60% 40% 45% 55% / 55% 45% 55% 45%',
+                      '40% 60% 55% 45% / 50% 55% 45% 50%',
+                    ]
+                  }}
+                  transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+                  className="absolute inset-0 bg-white/10"
+                />
+
+                {/* Wave pattern */}
+                <motion.div
+                  animate={{
+                    backgroundPosition: ['0% 0%', '100% 100%'],
+                  }}
+                  transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+                  className="absolute inset-0 opacity-20"
+                  style={{
+                    backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 20px, white 20px, white 40px)',
+                  }}
+                />
+
+                <div className="relative z-10">
+                  <div className="flex items-center gap-5 mb-6">
+                    <motion.div
+                      animate={{ rotate: [0, 360] }}
+                      transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+                      className="bg-white/20 backdrop-blur-sm p-4 rounded-full"
+                    >
+                      <Linkedin size={40} />
+                    </motion.div>
+                    <div>
+                      <div className="text-sm opacity-90 mb-1">Currículo & Portfólio</div>
+                      <div className="text-xl font-black">LinkedIn</div>
+                    </div>
+                  </div>
+
+                  <motion.a
+                    href="https://www.linkedin.com/in/kelwin-tecnico-desenvolvimento-de-sistemas/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ scale: 1.05, x: 10 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="flex items-center gap-3 bg-white/30 backdrop-blur-sm px-8 py-4 font-black border-2 border-white/50 rounded-full"
+                  >
+                    Ver Currículo
+                    <Send size={20} />
+                  </motion.a>
                 </div>
 
                 {/* Floating particles */}
